@@ -1,5 +1,5 @@
+import { gql, useMutation } from "@apollo/client";
 import * as React from "react";
-import { useMutation, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 
@@ -24,9 +24,9 @@ export function SessionItem({ session }) {
     await toggle();
   };
 
-  const { ID, title, day, room, level, favorite, speakers = [] } = session;
+  const { id, title, day, room, level, favorite, speakers = [] } = session;
   return (
-    <div key={ID} className="col-xs-12 col-sm-6" style={{ padding: 5 }}>
+    <div key={id} className="col-xs-12 col-sm-6" style={{ padding: 5 }}>
       <div className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">{title}</h3>
@@ -55,16 +55,23 @@ export function SessionItem({ session }) {
               </button>
             </span>
           )}
-          {speakers.map(({ ID, full_name }) => (
-            <span key={ID} style={{ padding: 2 }}>
+          {speakers ? speakers.map((speakers) => { 
+          if (speakers) return null
+
+          return (
+             <span key={speakers.id} style={{ padding: 2 }}>
               <Link
                 className="btn btn-default btn-lg"
-                to={`/conference/speakers/${ID}`}
+                to={`/conference/speakers/${speakers.id}`}
               >
-                View {full_name}'s Profile
+                View {speakers.full_name}'s Profile
               </Link>
             </span>
-          ))}
+          )
+           } ) 
+           : (
+           <div> no speakers </div>
+            )}
         </div>
       </div>
     </div>

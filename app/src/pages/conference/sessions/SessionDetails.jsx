@@ -1,5 +1,5 @@
+import { gql, useQuery } from "@apollo/client";
 import * as React from "react";
-import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { SessionItem } from "./SessionItem";
 
