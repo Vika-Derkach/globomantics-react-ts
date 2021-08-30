@@ -14,6 +14,18 @@
       "hash": "$2a$10$7bLV5PLjd4CDjQJqmkgDEuLlzXNsprI561a0Btk.h9YeKfsvqiahq",
       "role": "ADMIN",
       "id": "c22e95c6-e111-4655-b54a-8b12392e312e"
+    },
+    {
+      "email": "vika@gmail.com",
+      "hash": "$2a$10$aNN4jXRdMDJRX0ZihBpX7.ePGWFRrRXnXA/1cfraOlj.JE3JtZ63G",
+      "role": "USER",
+      "id": "06fc2a69-7934-46da-b6db-0412920939c0"
+    },
+    {
+      "email": "vika1@gmail.com",
+      "hash": "$2a$10$x8gVL8qRLuYFtw5nXuzSyuVUjLpx.fjgx0hLzVT/YiIYi0GNnCwhG",
+      "role": "USER",
+      "id": "48ce51ea-3914-4833-9ea7-0493976a0e84"
     }
   ]
 }
