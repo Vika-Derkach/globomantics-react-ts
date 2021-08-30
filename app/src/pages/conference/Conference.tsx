@@ -1,18 +1,19 @@
 import * as React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
-import { AddSession } from "./sessions/AddSession";
-import { Sessions } from "./sessions/Sessions";
-import { Session } from "./sessions/Session";
-import "./style-sessions.css";
-import { Speakers, Speaker } from "./Speakers";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { AboutUs } from "./AboutUs";
+import ErrorBoundary from "./ErrorBounary";
 import { Navigation } from "./Navigation";
+import { AddSession } from "./sessions/AddSession";
+import { Session } from "./sessions/Session";
+import { Sessions } from "./sessions/Sessions";
+import { Speaker, Speakers } from "./Speakers";
+import "./style-sessions.css";
 
 export function Conference() {
   const { path } = useRouteMatch();
-
+ 
   return (
-    <>
+    <ErrorBoundary>
       <Switch>
         <Route path={`${path}/sessions/new`}>
           <AddSession />
@@ -36,6 +37,6 @@ export function Conference() {
           <Navigation />
         </Route>
       </Switch>
-    </>
+    </ErrorBoundary>
   );
 }
