@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from "react";
-
+ // @ts-ignore: Unreachable code error
 export const AuthContext = React.createContext();
 const Provider = AuthContext.Provider;
 
